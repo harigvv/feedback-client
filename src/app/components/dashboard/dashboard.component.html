@@ -1,0 +1,8 @@
+
+<div>
+  <h4>My Feedbacks</h4>
+  <div *ngIf="loading">
+    <img src="assets/images/loading2.gif" alt="loading..."/>
+  </div>
+  <app-feedback-table *ngIf="!loading" [feedbacks]="feedbacks"></app-feedback-table>
+</div>

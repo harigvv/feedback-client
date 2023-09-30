@@ -1,0 +1,36 @@
+<div *ngIf="loading">
+  <img src="assets/images/loading2.gif" alt="loading..."/>
+</div>
+<div class="row"*ngIf="!loading">
+  <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+    <div *ngIf="errorMessage" class="error">
+      <p>{{errorMessage}}</p>
+    </div>
+    <div class="card auth">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="ratingValue">Rating : </label>
+            <select name="ratingValue" id="ratingValue" class="form-control" [(ngModel)]="feedback.rating">
+              <option value="" selected>Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="comment">Comment : </label>
+            <textarea name="comment"  id="comment" rows="5" class="form-control" placeholder="comment..." [(ngModel)]="feedback.comment"></textarea>
+          </div>
+          <br>
+          <div class="text-center">
+            <button class="btn btn-primary"  (click)="submitFeedback()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row register-card">
+  <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+    <div class="card auth">
+      <div class="card-body auth-card">
+        <div class="auth-avatar">
+          <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+        </div>
+        <div *ngIf="errorMessage" class="error">
+          <p>{{errorMessage}}</p>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="firstname">First Name : </label>
+            <input type="text" name="firstname" class="form-control" placeholder="First Name" [(ngModel)]="user.firstname">
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name : </label>
+            <input type="text" name="lastname" class="form-control" placeholder="Last Name" [(ngModel)]="user.lastname">
+          </div>
+          <div class="form-group">
+            <label for="email">Email : </label>
+            <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password : </label>
+            <input type="password" name="password" class="form-control" placeholder="********" [(ngModel)]="user.password">
+          </div>
+          <br>
+          <div class="text-center">
+            <button class="btn btn-primary"  (click)="createAccount()">Create Account</button>
+          </div>
+        </form>
+        <br>
+        <div class="text-center sign-up">
+          Have an account ? <a routerLink="/login"> Login</a> here.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

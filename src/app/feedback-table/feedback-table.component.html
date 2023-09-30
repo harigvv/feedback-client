@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">S.No.</th>
+    <th scope="col">Rating</th>
+    <th scope="col">Comment</th>
+    <th scope="col">Submitted By</th>
+    <th scope="col">TimeStamp</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let feedback of feedbacks; index as i">
+    <th scope="row">{{i+1}}</th>
+    <td>{{feedback.rating}}</td>
+    <td>{{feedback.comment}}</td>
+    <td>{{feedback.email}}</td>
+    <td>{{getDate(feedback.timestamp)}}</td>
+  </tr>
+  </tbody>
+</table>

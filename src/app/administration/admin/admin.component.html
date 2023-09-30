@@ -1,0 +1,9 @@
+<div *ngIf="loading">
+<img src="assets/images/loading2.gif" alt="loading..."/>
+</div>
+<div *ngIf="!loading">
+  <button (click)="loadAllFeedbacks()"> Load all feedbacks</button>
+</div>
+<div *ngIf="dataAvailable">
+  <app-feedback-table [feedbacks]="feedbacks"></app-feedback-table>
+</div>
